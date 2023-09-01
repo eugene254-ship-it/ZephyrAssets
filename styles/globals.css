@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  .main-bg {
+      background-image: url('/main-bg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      backdrop-filter: blur(1px);
+      
+    
+    
+  }
+}
