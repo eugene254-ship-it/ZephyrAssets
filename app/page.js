@@ -23,9 +23,17 @@ const Home = () => {
           </ul>
         </nav>
       </section>
-      <section className="bg-white bg-opacity-90 container p-4 rounded-xl shadow-lg">
+      <section className="mt-5 bg-white bg-opacity-90 container p-4 rounded-xl shadow-lg">
         <div>
-          <h1 className="p-4">Tokenize your Real-World Assets Today !</h1>
+          <h1 className="p-4 mt-4 mb-6 shadow-xl text-bold font-bold text-2xl inline-block ring-2
+           ring-cyan-500 rounded-xl bg-gray-500 bg-opacity-40">Tokenize your Real-World Assets Today !</h1>
+           <ul>
+            <li className="w-[150px] mt-4 mb-2 ring-2 ring-black text-center">
+              NYC House
+              <img src="./pixel-house.png" alt="pixelated-house" ></img>
+            </li>
+           </ul>
+          <p className="mt-5 text-center font-semibold">Welcome to the first world-class Token Real Assets </p>
         </div>
         <div></div>
       </section>
