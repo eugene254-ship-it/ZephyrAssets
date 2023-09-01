@@ -1,6 +1,7 @@
 import './layout.js'
 import '../styles/globals.css';
 import React from 'react';
+import Connect_Wallet from '@/components/Connect_Wallet.js';
 
 const Home = () => {
   return (
@@ -17,9 +18,7 @@ const Home = () => {
             <li>Tips</li>
             <li>Profile</li>
             <li className="flex">
-              <button className="mx-2 rounded-xl bg-blue-500 p-2 text-white hover:bg-cyan-400">
-                Connect Wallet
-              </button>
+              <Connect_Wallet></Connect_Wallet>
             </li>
           </ul>
         </nav>
