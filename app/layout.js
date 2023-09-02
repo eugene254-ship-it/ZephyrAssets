@@ -6,6 +6,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
+      <noscript>Javascript is not detected</noscript>
       <body className="main-bg min-h-screen min-w-sreen">
         {children}
         </body>
