@@ -1,7 +1,6 @@
 'use client'
 import Web3 from'web3';
 import React, { useState } from 'react'
-import { Ether } from '@usedapp/core';
 
 
 const Connect_Wallet = () => {
