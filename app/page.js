@@ -28,7 +28,7 @@ const Home = () => {
           <h1 className="p-4 mt-4 mb-6 shadow-xl text-bold font-bold text-2xl inline-block ring-2
            ring-cyan-500 rounded-xl bg-gray-500 bg-opacity-40">Tokenize your Real-World Assets Today !</h1>
            <ul>
-            <li className="w-[150px] mt-4 mb-2 ring-2 ring-black text-center">
+            <li className="w-[150px] mt-4 mb-2 ring-2 ring-black text-center hover:scale-125 duration-300 font-medium">
               NYC House
               <img src="./pixel-house.png" alt="pixelated-house" ></img>
             </li>
