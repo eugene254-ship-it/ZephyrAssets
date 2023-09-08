@@ -1,34 +1,19 @@
 import './layout.js'
 import '../styles/globals.css';
 import React from 'react';
-import Connect_Wallet from '@/components/Connect_Wallet.js';
+import Navbar from '@/components/Navbar.js';
+
 import {PurposePart1, PurposePart2, PurposePart3} from '@/components/Text.js';
 
 const Home = () => {
   return (
     <main>
-      <section className="sticky ">
-       
-        <nav className='flex p-4 ring-2 ring-black justify-center items-center bg-white
-          bg-opacity-80 mx-auto rounded-md'>
-           <h1 className="text-bold text-3xl">TKRW</h1>
-          <ul className='flex justify-center space-x-5 items-center
-           text-center m-3 cursor-default'>
-            <li className="hover:text-blue-300 ">Home</li>
-            <li>About</li>
-            <li>Tips</li>
-            <li>Profile</li>
-            <li className="flex">
-              <Connect_Wallet></Connect_Wallet>
-            </li>
-          </ul>
-        </nav>
-      </section>
+     <Navbar></Navbar>
       <section className="mt-5 mx-auto bg-white text-center justify-center items-center bg-opacity-90 container p-4 rounded-xl shadow-lg">
         <div>
           <h1 className="p-4 mt-4 mb-6 shadow-xl text-bold font-bold text-2xl inline-block ring-2
            ring-cyan-500 rounded-xl bg-gray-500 bg-opacity-40">Tokenize your Real-World Assets Today !</h1>
-           <ul className="grid grid-cols-5 p-4 ring-2 ring-black rounded-md">
+           <ul className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4 ring-2 ring-black rounded-md  ">
             <li className="nfts-assets bg-[#616179]">
               <span className="inline-flex">NYC House</span>
                 <img src="./blue-badge.png" className="w-[20px] inline-block mx-2"></img>
