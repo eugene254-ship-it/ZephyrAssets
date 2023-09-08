@@ -1,5 +1,5 @@
 'use client'
-import Web3 from'web3';
+import { ethers } from'ethers';
 import React, { useState } from 'react'
 
 
@@ -9,7 +9,7 @@ const Connect_Wallet = () => {
 
 
     const onClick = async () => {
-      const web3 = new Web3("https://sepolia.infura.io/v3/822d31f00fbf44048318b8a7bc4c4098"); 
+      const eth = new ethers.providers.JsonRpcProvider("https://sepolia.infura.io/v3/822d31f00fbf44048318b8a7bc4c4098"); 
       
 
 

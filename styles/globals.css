@@ -10,8 +10,18 @@
       background-repeat: no-repeat;
       background-position: center center;
       backdrop-filter: blur(1px);
-      
+    }
+  .nfts-assets{
+      @apply w-[200px] mt-4 mb-2 ring-2 ring-black text-center transform hover:scale-125 hover:text-red-800 duration-300 font-medium
+    }
+  
+  .hover:scale-125 {
+      will-change: transform;
+    }
+  
+    .purpose-win {
+      @apply font-bold text-xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
+    }
     
-    
-  }
+
 }
