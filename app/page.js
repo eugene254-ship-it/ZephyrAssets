@@ -59,7 +59,6 @@ const Home = () => {
         <h2>Ecological Impact</h2>
         <p>Digitizing assets on the blockchain can significantly reduce the amount of paper and physical resources required in traditional asset management. This not only makes processes more efficient but also contributes to environmental sustainability.</p> */}
         <div className="bg-white ring-2 ring-black shadow-xl rounded-xl inline-block p-4">
-          <img src='./first-img.png' alt="back-image"></img>
         </div>
       </section>
       <section className="why-do-it? ">
