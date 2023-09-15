@@ -26,6 +26,9 @@
       @apply font-bold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
     }
     
+    .main-div {
+      @apply bg-white ring-2 ring-black rounded-xl inline-block p-6 shadow-lg mt-5 mb-4
+    }
 
 }
 
