@@ -40,8 +40,9 @@ const Home = () => {
         </div>
         
       </section>
-      <section className="grid grid-cols-2 gap-5 mt-5 mx-auto text-center justify-center items-center bg-opacity-90 container p-4 rounded-xl">
-       <div className="bg-white ring-2 ring-black rounded-xl inline-block p-4 shadow-lg">
+      <section className="grid grid-cols-2 gap-5 mt-5 mx-auto text-center justify-center 
+      bg-white ring-2 ring-black items-center  container p-4 rounded-xl">
+       <div className="bg-white ring-2 ring-black rounded-xl inline-block p-6 shadow-lg mt-5 mb-4 ">
         <h1 className="font-extrabold text-2xl p-2 ">What's the Purpose of Real-World Token Assets?</h1>
         <PurposePart1></PurposePart1>
         <PurposePart2></PurposePart2>
@@ -58,11 +59,15 @@ const Home = () => {
 
         <h2>Ecological Impact</h2>
         <p>Digitizing assets on the blockchain can significantly reduce the amount of paper and physical resources required in traditional asset management. This not only makes processes more efficient but also contributes to environmental sustainability.</p> */}
-        <div className="bg-white ring-2 ring-black shadow-xl rounded-xl inline-block p-4">
+        <div className="rounded-xl inline-block p-4">
+          <img src="./window_dog.png" alt="dog_in_house_image" className="rounded-xl shadow-md shadow-black"/>
         </div>
       </section>
-      <section className="why-do-it? ">
-        
+      <section className="why-do-it? mt-5 mx-auto text-center justify-center 
+      bg-white ring-2 ring-black items-center container p-4 rounded-xl">
+        <div>
+          <h2> Why should you put your tokens inside </h2>
+        </div>
       </section>
     </main>
   )
