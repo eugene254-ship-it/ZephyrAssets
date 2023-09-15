@@ -3,7 +3,8 @@ import '../styles/globals.css';
 import React from 'react';
 import Navbar from '@/components/Navbar.js';
 
-import {PurposePart1, PurposePart2, PurposePart3} from '@/components/Text.js';
+import {PurposePart1, PurposePart2, PurposePart3, 
+  Why1, Why2, Why3, Why4} from '@/components/Text.js';
 
 const Home = () => {
   return (
@@ -66,7 +67,11 @@ const Home = () => {
       <section className="why-do-it? mt-5 mx-auto text-center justify-center 
       bg-white ring-2 ring-black items-center container p-4 rounded-xl">
         <div>
-          <h2> Why should you put your tokens inside </h2>
+          <h2 className="text-3xl font-semibold text-">Why should you Tokenize your assets ?</h2>
+          <Why1></Why1>
+          <Why2></Why2>
+          <Why3></Why3>
+          <Why4></Why4>
         </div>
       </section>
     </main>

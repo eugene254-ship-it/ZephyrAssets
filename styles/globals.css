@@ -20,7 +20,10 @@
     }
   
     .purpose-win {
-      @apply font-bold text-xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
+      @apply font-extrabold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
+    }
+    .purpose-win-title {
+      @apply font-bold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
     }
     
 

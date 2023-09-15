@@ -6,7 +6,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <body className="main-bg min-h-screen min-w-sreen">
+      <body className="main-bg min-h-screen min-w-sreen cursor-default">
         {children}
         </body>
     </html>
