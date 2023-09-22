@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-      <footer className="bg-gray-900 text-white py-6">
+      <footer className="bg-[#D1AAF2] text-black py-6 ring-1 ring-black">
         <div className="container mx-auto flex justify-between items-center">
           
           {/* Copyright */}
@@ -12,12 +12,12 @@ const Footer = () => {
           </div>
           
           {/* Navigation */}
-          <div className="flex space-x-4">
-            <a href="#" className="text-sm text-gray-400 hover:text-white">Home</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white">About</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white">Services</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white">FAQ</a>
-            <a href="#" className="text-sm text-gray-400 hover:text-white">Contact</a>
+          <div className="flex space-x-4 text-black">
+            <a href="#" className="text-sm  hover:text-white">Home</a>
+            <a href="#" className="text-sm  hover:text-white">About</a>
+            <a href="#" className="text-sm  hover:text-white">Services</a>
+            <a href="#" className="text-sm  hover:text-white">FAQ</a>
+            <a href="#" className="text-sm  hover:text-white">Contact</a>
           </div>
   
         </div>

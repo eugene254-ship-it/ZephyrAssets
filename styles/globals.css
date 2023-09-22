@@ -5,7 +5,7 @@
 @layer utilities {
 
   .main-bg {
-      background-image: url('/main-bg.png');
+      background-image: url('/Cotton.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
