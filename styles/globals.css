@@ -5,15 +5,25 @@
 @layer utilities {
 
   .main-bg {
-      background-image: url('/Cotton.jpg');
+      background-image: url('/backgrounds/Cotton.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       backdrop-filter: blur(1px);
     }
+  
+  .topo-bg {
+    background-image: url("/backgrounds/cool-background.png");
+    backdrop-filter: blur(1px);
+  
+  }
   .nfts-assets{
-      @apply w-[200px] mt-4 mb-2 ring-2 ring-black text-center transform hover:scale-125 hover:text-red-800 duration-100 font-medium
+      @apply w-[200px] mt-4 mb-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100
     }
+
+  .buy-button {
+  @apply ring-2 ring-black rounded-xl px-6 mt-2 mb-2 bg-blue-600 hover:bg-blue-500 active:bg-white font-semibold text-lg
+  }
   
   .hover:scale-125 {
       will-change: transform;

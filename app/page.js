@@ -6,6 +6,10 @@ import Footer from '@/components/Footer.js';
 import { Why1, Why2, Why3, Why4} from '@/components/Text.js';
 import PurposePart from '@/components/PurposePart.js';
 import Showcase from '@/components/Showcase.js';
+// import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
+
+
+
 
 const Home = () => {
   return (

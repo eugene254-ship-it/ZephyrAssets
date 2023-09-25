@@ -26,7 +26,7 @@ const PurposePart = () => (
         <h2>Ecological Impact</h2>
         <p>Digitizing assets on the blockchain can significantly reduce the amount of paper and physical resources required in traditional asset management. This not only makes processes more efficient but also contributes to environmental sustainability.</p> */}
         <div className="rounded-xl inline-block p-4">
-          <img src="./window_dog.png" alt="dog_in_house_image" className="rounded-xl shadow-md shadow-black"/>
+          <img src="/home_imgs/house.jpg" alt="dog_in_house_image" className="rounded-xl shadow-md shadow-black"/>
         </div>
       </section>
       )

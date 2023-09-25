@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@usedapp/core": "^1.2.11",
+    "@openzeppelin/contracts": "^4.9.3",
+    "@usedapp/core": "^1.2.13",
     "ethers": "^5.7.2",
     "next": "^13.4.19",
     "react": "18.2.0",

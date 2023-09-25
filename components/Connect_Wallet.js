@@ -1,6 +1,6 @@
 'use client'
 import { ethers } from'ethers';
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 
 const Connect_Wallet = () => {
@@ -27,12 +27,11 @@ const Connect_Wallet = () => {
 
     }
   return (
-          <button className={` 
-           ${isConnected ? "bg-blue-800 text-stone-50 ring-pink-500 p-2 rounded-xl" : "bg-blue-500 p-2 text-white hover:bg-cyan-400 active:bg-cyan-700 mx-2 rounded-xl" }`} 
-           onClick={onClick}>
-                {isConnected ? "Connected" : "Connect Wallet"}
-         </button>  
-         
+    <button 
+    className={`${isConnected ? "bg-blue-800 text-stone-50 ring-pink-500 p-2 rounded-xl" : "bg-blue-500 p-2 text-white hover:bg-cyan-400 active:bg-cyan-700 mx-2 rounded-xl"}`} 
+    onClick={onClick}>
+      {isConnected ? "Connected" : "Connect Wallet"}
+  </button>
          )
 }
 
