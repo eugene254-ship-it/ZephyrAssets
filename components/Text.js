@@ -5,9 +5,9 @@ import React from 'react'
 // Reusable component
 const PurposePart = ({ title, className, children }) => {
   return (
-    <div className={`p-2 ${className}`}>
-      <h2 className="purpose-win-title">{title}</h2>
-      <p className="p-2">{children}</p>
+    <div className={`p-4 rounded-md shadow-lg border border-gray-200 mt-4 ${className}`}>
+      <h2 className="text-2xl font-semibold text-blue-600">{title}</h2>
+      <p className="text-gray-700 mt-2">{children}</p>
     </div>
   );
 };
