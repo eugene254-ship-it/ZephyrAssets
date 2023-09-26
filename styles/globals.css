@@ -22,7 +22,7 @@
     }
 
   .buy-button {
-  @apply ring-2 ring-black rounded-xl px-6 mt-2 mb-2 bg-blue-600 hover:bg-blue-500 active:bg-white font-semibold text-lg
+  @apply ring-2 ring-black rounded-xl px-6 mt-2 mb-2 bg-blue-600 hover:bg-blue-500 hover:text-black active:bg-white font-semibold text-lg
   }
   
   .hover:scale-125 {
