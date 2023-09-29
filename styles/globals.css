@@ -18,7 +18,7 @@
   
   }
   .nfts-assets{
-      @apply w-[200px] mt-4 mb-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100
+      @apply w-[200px] mt-4 mb-2 m-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100
     }
 
   .buy-button {
