@@ -21,7 +21,7 @@
     }
   
   .red-container {
-    @apply mt-5 mx-auto bg-red-600 text-white text-center justify-center items-center container p-4 rounded-xl
+    @apply mt-5 mb-2 mx-auto bg-red-600 text-white text-center justify-center items-center container p-4 rounded-xl
   }
   .black-container {
     @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl
@@ -33,6 +33,10 @@
 
   .white {
     @apply text-white
+  }
+
+  .red {
+    @apply text-red-700
   }
 
   .nft-card {
@@ -72,7 +76,7 @@
     }
     
     .main-div {
-      @apply bg-white ring-2 ring-black rounded-xl inline-block p-6 shadow-lg mt-5 mb-4
+      @apply rounded-xl inline-block p-6 shadow-lg mt-5 mb-4
     }
 
 }

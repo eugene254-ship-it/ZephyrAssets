@@ -5,9 +5,9 @@ import React from 'react'
 // Reusable component
 const PurposePart = ({ title, className, children }) => {
   return (
-    <div className={`p-4 rounded-md shadow-lg mt-4 ${className}`}>
-      <h2 className="text-2xl font-semibold text-blue-500">{title}</h2>
-      <p className="white mt-2">{children}</p>
+    <div className={`p-4 ${className}`}>
+      <h2 className="text-2xl text-left font-semibold hover:animate-pulse ">{title}</h2>
+      <p className="text-black mt-2">{children}</p>
     </div>
   );
 };
@@ -29,7 +29,7 @@ const PurposePart2 = () => (
 );
 
 const PurposePart3 = () => (
-  <PurposePart title="Democratizing Investment" className="ring-fuchsia-600 bg-cyan-400 text-white">
+  <PurposePart title="Democratizing Investment">
     Tokenization can divide a high-value physical asset into smaller, 
     more affordable shares. This process democratizes investment and
       ownership, allowing a broader range of individuals to participate in markets that may have 

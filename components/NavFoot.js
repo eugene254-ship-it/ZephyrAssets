@@ -27,7 +27,7 @@ const Navbar = () => {
 
 const Footer = () => {
     return (
-      <footer className="bg-black text-white py-10 ring-1 ring-black">
+      <footer className="bg-black text-white py-10 mt-5 ring-1 ring-black">
         <div className="container mx-auto flex justify-between items-center">
           
           {/* Copyright */}
