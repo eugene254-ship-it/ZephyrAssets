@@ -5,8 +5,9 @@ const Navbar = () => {
   return (
     <section>
       <div className="sticky top-0">
-        <nav className='flex rounded-md mx-auto ring-1 ring-black items-center bg-gray-900 text-white {/* bg-[#D1AAF2] */} mx-auto rounded-mf justify-around'> {/* Added justify-between */}
-        <img src='./logo.png' className='w-[120px]' alt="logo"/>  {/* <h1 className="font-bold text-3xl mx-4">ZephyrX</h1> */}
+        <nav className='flex ring-1 ring-black items-center bg-black text-white  mx-auto justify-around'> {/* Added justify-between */}
+        <img src='./logo.png' className='w-[120px]' alt="logo"/> 
+         <h1 className="flex text-3xl text-white font-extrabold ">ZephyrX</h1>
         <ul className='flex justify-center space-x-4 items-center
         text-center text-lg font-semibold m-2 cursor-default'>
           <li className="hover:text-blue-300 active:text-white">Home</li>
