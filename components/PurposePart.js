@@ -6,8 +6,8 @@ import {PurposePart1, PurposePart2, PurposePart3} from './Text'
 const PurposePart = () => (
 
 
-<section className="grid grid-cols-2 gap-5 mt-5 mx-auto text-center justify-center 
-      bg-white ring-2 ring-black items-center  container p-4 rounded-xl">
+<section className="grid grid-cols-2 gap-5  
+      bg-white ring-2 ring-black black-container">
        <div className="main-div">
         <h1 className="font-extrabold text-2xl p-2 ">What's the Purpose of Real-World Token Assets?</h1>
         <PurposePart1></PurposePart1>

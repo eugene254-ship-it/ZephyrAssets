@@ -1,11 +1,11 @@
 import './layout.js'
 import '../styles/globals.css';
 import React from 'react';
-import Navbar from '@/components/Navbar.js';
-import Footer from '@/components/Footer.js';
+import { Navbar, Footer } from '@/components/NavFoot.js';
 import { Why1, Why2, Why3, Why4} from '@/components/Text.js';
 import PurposePart from '@/components/PurposePart.js';
 import Showcase from '@/components/Showcase.js';
+import FadeUp from '@/components/fadeEffect.js';
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 
@@ -14,14 +14,14 @@ import Showcase from '@/components/Showcase.js';
 const Home = () => {
   return (
     <main>
+    <FadeUp>
      <Navbar></Navbar>
       <Showcase></Showcase>
       <PurposePart></PurposePart>
-
-      <section className=" mt-5 mx-auto text-center justify-center 
-      bg-white ring-2 ring-black items-center container p-4 rounded-xl">
+      
+      <section className=" ring-2 ring-black black-container text-white">
         <div>
-          <h2 className="text-3xl font-semibold text-">Why should you Tokenize your assets ?</h2>
+          <h2 className="bw-title ring-2 ring-white">Why should you Tokenize your assets ?</h2>
           <ul>
           <li>
           <Why1></Why1>
@@ -98,6 +98,7 @@ const Home = () => {
 
       </section>
       <Footer></Footer>
+      </FadeUp>
     </main>
     
   )

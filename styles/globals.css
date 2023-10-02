@@ -4,6 +4,14 @@
 
 @layer utilities {
 
+  /* globals.css */
+.topography-bg {
+  background-image: url('/topography.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
   .main-bg {
       background-image: url('/backgrounds/Cotton.jpg');
       background-size: cover;
@@ -12,11 +20,38 @@
       backdrop-filter: blur(1px);
     }
   
-  .topo-bg {
-    background-image: url("/backgrounds/cool-background.png");
-    backdrop-filter: blur(1px);
-  
+  .red-container {
+    @apply mt-5 mx-auto bg-red-600 text-white text-center justify-center items-center container p-4 rounded-xl
   }
+  .black-container {
+    @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl
+  }
+
+  .bw-title {
+    @apply p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl text-white bg-black
+  }
+
+  .white {
+    @apply text-white
+  }
+
+  .nft-card {
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .nft-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .badge-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
   .nfts-assets{
       @apply w-[200px] mt-4 mb-2 m-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100
     }

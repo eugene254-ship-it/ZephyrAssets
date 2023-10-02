@@ -35,7 +35,7 @@ const Connect_Wallet = () => {
     <div className="flex items-center space-x-2">
       {isConnected ? (
         <>
-          <span className="text-white">{accountAddress.slice(0, 6)}...</span>
+          <span className="text-white ring-2 p-2 rounded-xl ring-black bg-blue-700 hover:bg-blue-300">{accountAddress.slice(0, 6)}...</span>
         </>
       ) : (
         <button
