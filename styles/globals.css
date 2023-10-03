@@ -79,5 +79,9 @@
       @apply rounded-xl inline-block p-6 shadow-lg mt-5 mb-4
     }
 
+    .step-div{
+      @apply text-2xl text-center p-4 mt-4 mb-4
+    }
+
 }
 

@@ -11,8 +11,6 @@ const PurposePart = () => (
        <div className="main-div bg-white ring-2 ring-fuchsia-400">
         <h1 className="font-extrabold text-2xl red-container">What's the Purpose of Real-World Token Assets?</h1>
         <PurposePart1></PurposePart1>
-        <PurposePart2></PurposePart2>
-        <PurposePart3></PurposePart3>
         </div>
         {/* <h2>Enhanced Liquidity</h2>
         <p>Tokenized assets can be traded on various decentralized marketplaces with relative ease. This feature increases the liquidity of assets that are traditionally hard to move, enhancing their value and making them more appealing to investors.</p>
