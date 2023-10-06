@@ -8,34 +8,35 @@ const Connect_Wallet = () => {
   const [accountImage, setAccountImage] = useState('');
 
   const checkAccount = async () => {
+    console.log("Checking account...");
     
     if (window.ethereum) {
+      console.log("window.ethereum is available");
+      
       try {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const selectedAddress = accounts[0];
         console.log('Account is Connected:', selectedAddress);
         setIsConnected(true);
         setAccountAddress(selectedAddress);
-
-        // You should replace this with your logic to fetch the associated image for the address.
-        const imageUrl = ''; // Replace with the actual image URL
-        setAccountImage(imageUrl);
       } catch (error) {
-        console.error(error);
+        console.log("An error occurred:", error);
       }
+    } else {
+      console.log("window.ethereum is not available");
     }
   };
-
+  
   useEffect(() => {
     // Comment this out if you don't want to automatically check for account connection
-    // checkAccount();
+    checkAccount();
   }, []);
 
   return (
     <div className="flex items-center space-x-2">
       {isConnected ? (
         <>
-          <span className="text-white ring-2 p-2 rounded-xl ring-black bg-blue-700 hover:bg-blue-300">{accountAddress.slice(0, 6)}...</span>
+          <span className="text-white ring-2 p-2 rounded-xl ring-black bg-red-700 hover:bg-blue-300">{accountAddress.slice(0, 6)}...</span>
         </>
       ) : (
         <button
