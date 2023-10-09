@@ -5,19 +5,26 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <section>
-      <div className="sticky top-0">
-        <nav className='flex ring-1 ring-black items-center bg-black text-white  mx-auto justify-around'> {/* Added justify-between */}
-        <img src='./logo.png' className='w-[120px]' alt="logo" href="/"/> 
-         <h1 className="flex text-3xl text-white font-extrabold ">ZephyrX</h1>
+      <div className="">
+        <nav className='flex sticky top-0 z-50 ring-1 ring-black items-center bg-black text-white  mx-auto justify-around'> {/* Added justify-between */}
+        <img src='./logo.png' className='w-[120px] invert mx-5' alt="logo" href="/"/> 
+         {/* <h1 className="flex text-3xl text-white font-extrabold ">ZephyrX</h1> */}
         <ul className='flex justify-center space-x-4 items-center
         text-center text-lg font-semibold m-2 cursor-default'>
-          <li className="hover:text-blue-300 active:text-white">
-            <Link href="/">
-            Home
-            </Link>
+            <li>
+          <Link href="/">
+            <div className="group flex bg-red-600 items-center ring-1 container rounded-md ring-white hover:scale-125 duration-300">
+              <span className='px-1 group-hover:text-black text-white'>Create</span>
+              <img className="mt-[2px] w-[25px] h-[25px] group-hover:filter group-hover:invert" src="./plus-button.png" alt="" />
+            </div>
+          </Link>
             </li>
+          <li className='text-fuchsia-400'>
+            Explore
+          </li>
+        
           <li className="hover:text-blue-300 active:text-white">
-            <Link href="/about">
+            <Link href="../app/about">
             About
             </Link>
             </li>
