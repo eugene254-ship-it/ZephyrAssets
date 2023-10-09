@@ -11,13 +11,18 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
     "@usedapp/core": "^1.2.13",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "@web3modal/wagmi": "^3.0.2",
     "ethers": "^5.7.2",
     "next": "^13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "solc": "^0.8.7",
     "utf-8-validate": "^5.0.10",
-    "web3": "^4.1.1"
+    "viem": "^1.16.0",
+    "wagmi": "^1.4.3",
+    "web3": "^4.1.1",
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
