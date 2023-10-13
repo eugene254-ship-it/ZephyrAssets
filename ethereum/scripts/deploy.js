@@ -6,6 +6,6 @@
 // global scope, and execute the script.
 const hre = require("hardhat");
 
-async function main() {
+async function () {
     
 };
