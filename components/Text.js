@@ -40,7 +40,7 @@ const Why1 = () => (
   <div>
     <ul>
       <li>
-        <Typography className="text-left" title="Unlock Global Wealth with a Click">
+        <Typography className="text-left text-black" title="Unlock Global Wealth with a Click">
         Imagine buying a beachfront villa in Bali or a chic Parisian apartment—no middlemen, no paperwork,
         just seamless international transactions. With tokenized real estate, borders vanish!
         </Typography>

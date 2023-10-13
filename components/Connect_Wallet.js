@@ -1,47 +1,34 @@
-'use client';
+"use client"
 import React, { useState, useEffect } from 'react';
-import Web3Modal from "web3modal";
-import WalletConnectProvider from "@walletconnect/web3-provider";
+import Web3Modal from 'web3modal';
+import Web3 from 'web3';
 
 const Connect_Wallet = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [accountAddress, setAccountAddress] = useState('');
 
-  let web3Modal;
-
-  const providerOptions = {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        infuraId: "822d31f00fbf44048318b8a7bc4c4098"  // Insert your Infura Project ID here
-      }
-    }
-  };
-
-  web3Modal = new Web3Modal({
-    network: "mainnet",
-    cacheProvider: true,
-    providerOptions
-  });
+  // Set up Web3Modal
+  const web3Modal = new Web3Modal();
 
   const connectWallet = async () => {
     const provider = await web3Modal.connect();
-    const web3 = new ethers.providers.Web3Provider(provider);
-    const signer = web3.getSigner();
-    const address = await signer.getAddress();
-    
-    setIsConnected(true);
-    setAccountAddress(address);
+    const web3 = new Web3(provider);
+    const accounts = await web3.eth.getAccounts();
+
+    if (accounts.length > 0) {
+      setIsConnected(true);
+      setAccountAddress(accounts[0]);
+    }
   };
 
-  const checkAccount = async () => {
+  const checkIfWalletIsConnected = async () => {
     if (web3Modal.cachedProvider) {
       connectWallet();
     }
   };
 
   useEffect(() => {
-    checkAccount();
+    checkIfWalletIsConnected();
   }, []);
 
   return (

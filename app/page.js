@@ -6,7 +6,7 @@ import { Why1, Question} from '@/components/Text.js';
 import PurposePart from '@/components/PurposePart.js';
 import Showcase from '@/components/Showcase.js';
 import FadeUp from '@/components/fadeEffect.js';
-import Steps from '@/components/steps.js';
+import Steps from '@/components/Steps.js';
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 
