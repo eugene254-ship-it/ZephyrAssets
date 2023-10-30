@@ -24,7 +24,7 @@ const Navbar = () => {
           </li>
         
           <li className="hover:text-blue-300 active:text-white">
-            <Link href="../app/about">
+            <Link href="/about">
             About
             </Link>
             </li>
