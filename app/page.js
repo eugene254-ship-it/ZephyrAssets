@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <main>
       <FadeUp>
-        
         <Showcase></Showcase>
         <PurposePart></PurposePart>
 

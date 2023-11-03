@@ -5,8 +5,7 @@ const Connect_Wallet = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [accountAddress, setAccountAddress] = useState('');
 
-
-
+//  MAKE A FULLY RESPONSIVE CONNECT WALLET
   const connectWallet = async () => {
   };
 

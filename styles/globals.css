@@ -4,6 +4,16 @@
 
 @layer utilities {
 
+  .main {
+    scroll-behavior: smooth;
+  }
+
+.about-bg {
+  background-image: url('/backgrounds/about.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
   /* globals.css */
 .topography-bg {
   background-image: url('/topography.svg');

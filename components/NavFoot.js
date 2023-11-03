@@ -2,19 +2,19 @@ import React from "react";
 import Connect_Wallet from "@/components/Connect_Wallet.js";
 import Link from "next/link";
 
+// Navigation Bar
 const Navbar = () => {
   return (
     <section>
       <div className="">
         <nav className="flex sticky top-0 z-50 ring-1 ring-black items-center bg-black text-white  mx-auto justify-around">
-          {" "}
-          {/* Added justify-between */}
+          <Link href="/">
           <img
             src="./logo.png"
             className="w-[120px] invert mx-5"
             alt="logo"
-            href="/"
           />
+          </Link>
           {/* <h1 className="flex text-3xl text-white font-extrabold ">ZephyrX</h1> */}
           <ul
             className="flex justify-center space-x-4 items-center
@@ -57,6 +57,7 @@ const Navbar = () => {
   );
 };
 
+// Footer Section Part
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10 mt-5 ring-1 ring-black">
@@ -68,21 +69,21 @@ const Footer = () => {
 
         {/* Navigation */}
         <div className="flex space-x-4 text-white">
-          <a href="#" className="text-sm  hover:text-blue-300">
+          <Link href="/" className="text-sm  hover:text-blue-300">
             Home
-          </a>
-          <a href="#" className="text-sm  hover:text-blue-300">
+          </Link>
+          <Link href="/About" className="text-sm  hover:text-blue-300">
             About
-          </a>
-          <a href="#" className="text-sm  hover:text-blue-300">
+          </Link>
+          <Link href="/Services" className="text-sm  hover:text-blue-300">
             Services
-          </a>
-          <a href="#" className="text-sm  hover:text-blue-300">
+          </Link>
+          <Link href="/" className="text-sm  hover:text-blue-300">
             FAQ
-          </a>
-          <a href="#" className="text-sm  hover:text-blue-300">
+          </Link>
+          <Link href="/Contact" className="text-sm  hover:text-blue-300">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
