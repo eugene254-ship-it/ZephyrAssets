@@ -1,7 +1,6 @@
 import "./layout.js";
 import "../styles/globals.css";
 import React from "react";
-import { Navbar, Footer } from "@/components/NavFoot.js";
 import { Why1, Question } from "@/components/Text.js";
 import PurposePart from "@/components/PurposePart.js";
 import Showcase from "@/components/Showcase.js";
@@ -13,7 +12,7 @@ const Home = () => {
   return (
     <main>
       <FadeUp>
-        <Navbar></Navbar>
+        
         <Showcase></Showcase>
         <PurposePart></PurposePart>
 
@@ -29,7 +28,7 @@ const Home = () => {
           <Steps></Steps>
           <Question></Question>
         </section>
-        <Footer></Footer>
+        
       </FadeUp>
     </main>
   );

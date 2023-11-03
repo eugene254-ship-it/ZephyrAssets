@@ -1,4 +1,7 @@
 import { DAppProvider, useEthers } from '@usedapp/core';
+import { Navbar, Footer } from "@/components/NavFoot.js";
+
+
 
 export const metadata = {
   title: 'Next.js',
@@ -9,7 +12,9 @@ export default function RootLayout({ children }) {
  return (
     <html lang="en">
       <body className="topography-bg min-h-screen min-w-sreen cursor-default">
+          <Navbar></Navbar>
           {children}
+          <Footer></Footer>
         </body>
     </html>
   )

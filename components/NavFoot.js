@@ -34,12 +34,14 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
-          <li className='text-fuchsia-400'>
-            Explore
+          <li>
+            <Link href="/Explore" className='text-fuchsia-400 hover:text-cyan-500 active:text-green-400'>
+              Explore
+              </Link>
           </li>
         
           <li className="hover:text-blue-300 active:text-white">
-            <Link href="/about">
+            <Link href="/About">
             About
             </Link>
             </li>

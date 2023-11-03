@@ -1,34 +1,18 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Web3Modal from 'web3modal';
-import Web3 from 'web3';
 
 const Connect_Wallet = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [accountAddress, setAccountAddress] = useState('');
 
-  // Set up Web3Modal
-  const web3Modal = new Web3Modal();
+
 
   const connectWallet = async () => {
-    const provider = await web3Modal.connect();
-    const web3 = new Web3(provider);
-    const accounts = await web3.eth.getAccounts();
-
-    if (accounts.length > 0) {
-      setIsConnected(true);
-      setAccountAddress(accounts[0]);
-    }
   };
 
-  const checkIfWalletIsConnected = async () => {
-    if (web3Modal.cachedProvider) {
-      connectWallet();
-    }
-  };
 
   useEffect(() => {
-    checkIfWalletIsConnected();
+   
   }, []);
 
   return (

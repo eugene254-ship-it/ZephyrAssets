@@ -26,7 +26,7 @@ const PurposePart = () => (
         <p>Digitizing assets on the blockchain can significantly reduce the amount of paper and physical resources required in traditional asset management. This not only makes processes more efficient but also contributes to environmental sustainability.</p> */}
         <div className="rounded-xl inline-block p-4">
           <img src="/home_imgs/house.jpg" alt="house_image" className="rounded-xl ring-1 ring-white"/>
-          <img src="/home_imgs/car-irl.jpg" alt="car_image" className="flex justify-center rounded-xl ring-1 ring-white h-[700px]"/>
+          <img src="/home_imgs/car-irl.jpg" alt="car_image" className="flex justify-center translate-x-11 rounded-xl ring-1 ring-white h-[700px]"/>
           
         </div>
       </section>
