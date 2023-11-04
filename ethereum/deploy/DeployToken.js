@@ -1,19 +1,21 @@
-import { DeployFunction } from "hardhat-deploy/dist/types";
-import { HardhatRuntimeEnvironment } from "hardhat/types";
+const { DeployFunction } = require("hardhat-deploy/dist/types");
+const { HardhatRuntimeEnvironment } = require("hardhat/types");
+
 
 const DeployToken = async(hre) => {
-    hre = HardhatRuntimeEnvironment;
+    
     const {getNamedAccounts, deployments} = hre;
     const { log, deploy} = deployments;
     const { owner } = await getNamedAccounts();
-
+    
+    log("------------------------------------");
 
     const Deploy = await deploy("Zephyr", {
         from: owner,
-        args: [],
+        args: [owner, owner, owner],
         log: true,
     })
     
 }
 
-export default DeployToken;
+module.exports = DeployToken;
