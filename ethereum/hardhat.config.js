@@ -1,11 +1,15 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy");
 require("hardhat-deploy-ethers");
-require("dotenv");
 require("fs");
+require("dotenv").config();
+
 
 
 /** @type import('hardhat/config').HardhatUserConfig */
+
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
+
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -24,6 +28,11 @@ module.exports = {
     hardhat: {
       chainId: 31337,
     },
+    sepolia : {
+      chainId: 11155111,
+      url: String(process.env.SEPOLIA_RPC_URL),
+      accounts: [String(process.env.PRIVATE_KEY)],
+    }
   },
   namedAccounts:{
     owner: {

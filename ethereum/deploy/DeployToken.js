@@ -1,3 +1,4 @@
+const { ethers } = require("hardhat");
 const { DeployFunction } = require("hardhat-deploy/dist/types");
 const { HardhatRuntimeEnvironment } = require("hardhat/types");
 
