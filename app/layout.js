@@ -1,5 +1,5 @@
-import { DAppProvider, useEthers } from '@usedapp/core';
 import { Navbar, Footer } from "@/components/NavFoot.js";
+import "../styles/globals.css";
 
 
 

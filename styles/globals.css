@@ -31,7 +31,7 @@
     }
   
   .red-container {
-    @apply mt-5 mb-2 mx-auto bg-red-600 text-white text-center justify-center items-center container p-4 rounded-xl
+    @apply mt-5 mb-2 mx-auto bg-red-600 text-white text-center justify-center items-center container p-6 rounded-xl
   }
   .black-container {
     @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl

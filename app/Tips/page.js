@@ -52,7 +52,7 @@ const Tips = () => {
         </dl>
         </div>
     </div>
-
+    
     
     </section>
   )

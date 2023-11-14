@@ -4,7 +4,7 @@ import React from "react";
 const Showcase = () => {
   return (
     <section className="red-container">
-      <div>
+      <div className="">
         <h1 className="bw-title">Tokenize your Real-World Assets Today !</h1>
         <ul className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4 rounded-md items-center">
           <li className="nft-card hover:shadow-md rounded-lg bg-[#616179] ring-2 shadow-slate-950 shadow-xl ring-blue-600 p-4 transition duration-300 ease-in-out">
