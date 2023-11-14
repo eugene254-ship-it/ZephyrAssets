@@ -45,8 +45,16 @@ const Navbar = () => {
             About
             </Link>
             </li>
-            <li className="hover:text-blue-300 active:text-white">Tips</li>
-            <li className="hover:text-blue-300 active:text-white">Profile</li>
+            <li className="hover:text-blue-300 active:text-white">
+            <Link href="/Tips">
+              Tips
+            </Link>
+              </li>
+            <li className="hover:text-blue-300 active:text-white">
+            <Link href="/Profile">
+              Profile
+            </Link>
+            </li>
             <li className="flex">
               <Connect_Wallet></Connect_Wallet>
             </li>

@@ -89,7 +89,7 @@
     }
     
     .main-div {
-      @apply rounded-xl inline-block p-6 shadow-lg mt-5 mb-4
+      @apply rounded-xl inline-block p-4 shadow-lg mt-5 mb-4
     }
 
     .step-div{
