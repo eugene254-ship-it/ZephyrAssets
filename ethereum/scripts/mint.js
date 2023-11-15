@@ -1,12 +1,10 @@
-const { getContract } = require("viem");
 const hre = require('hardhat');
 
 
 const mintForAccounts = async () => {
-  const { getNamedAccounts, deployments, ethers } = hre;
-  const { log } = deployments;
-  const { owner } = await getNamedAccounts();
-
+  const { ethers } = hre;
+  const signers = await ethers.getSigners();
+  
   // Assuming 'getContract' is a function that fetches the deployed contract instance
   const NFTContract = await getContract('Zephyr', owner);
 

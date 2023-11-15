@@ -13,6 +13,23 @@ contract AssetManager is AccessControl {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    error Unauthorized(); // No additional information
+    error UserAlreadyRegistered(address user);
+    error UserNotRegistered(address user);
+    error CannotFindAsset(bytes32 assetId);
+
+    modifier requireMinter(address _userAddress) {
+        if (!hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
+        if (!isRegistered[_userAddress]) revert UserNotRegistered(_userAddress);
+        _;
+    }
+
+    modifier isNotRegistered(address _userAddress) {
+        if (isRegistered[_userAddress])
+            revert UserAlreadyRegistered(_userAddress);
+        _;
+    }
+
     struct Assets {
         address holderAddress;
         bytes32 assetId;
@@ -41,9 +58,12 @@ contract AssetManager is AccessControl {
     struct User {
         string username;
         address userAddress;
-        Assets[] holdings;
-        transactionType[] transactions;
+        bytes32 userId;
     }
+
+    mapping (bytes32 => Assets[]) public userAssets;
+    mapping (bytes32 => transactionType[]) public userTransactions;
+
 
     User[] public users;
     Assets[] public assets;
@@ -56,32 +76,18 @@ contract AssetManager is AccessControl {
     uint256 internal TotalUsers = 0;
     uint256 internal TotalAssets = 0;
 
-    error Unauthorized(); // No additional information
-    error UserAlreadyRegistered(address user);
-    error UserNotRegistered(address user);
-    error CannotFindAsset(bytes32 assetId);
-
-    modifier requireMinter(address _userAddress) {
-        if (!hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
-        if (!isRegistered[_userAddress]) revert UserNotRegistered(_userAddress);
-        _;
-    }
-
-    modifier isNotRegistered(address _userAddress) {
-        if (isRegistered[_userAddress])
-            revert UserAlreadyRegistered(_userAddress);
-        _;
-    }
 
     function registerUser(
         string memory _username,
         address _address
     ) public isNotRegistered(_address) returns (bool, uint256) {
+        
+        bytes32 id = keccak256(abi.encodePacked(block.timestamp, _username, _address));
+
         User memory newUser = User({
             username: _username,
             userAddress: _address,
-            holdings: new Assets[](0),
-            transactions: new transactionType[](0)
+            userId: id
         });
 
         users.push(newUser);
@@ -163,6 +169,8 @@ contract AssetManager is AccessControl {
      
     } 
 
+    
+    function removeAsset() public {}
    
     function modifyAssetDescription() public {}
    
@@ -170,7 +178,6 @@ contract AssetManager is AccessControl {
    
     function modifyAssetAddressOwner() public {}
     
-    function removeAsset() public {}
 
     function removeListing() public {}
 
