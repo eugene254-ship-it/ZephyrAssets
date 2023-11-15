@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ZephyrTokenV1.sol";
 
 contract AssetManager is AccessControl {
+
     Zephyr zephyrNft;
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -20,13 +21,17 @@ contract AssetManager is AccessControl {
 
     modifier requireMinter(address _userAddress) {
         if (!hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
-        if (!isRegistered[_userAddress]) revert UserNotRegistered(_userAddress);
         _;
     }
 
     modifier isNotRegistered(address _userAddress) {
         if (isRegistered[_userAddress])
             revert UserAlreadyRegistered(_userAddress);
+        _;
+    }
+
+    modifier isAlreadyRegistered(address _userAddress) {
+        if (!isRegistered[_userAddress]) revert UserNotRegistered(_userAddress);
         _;
     }
 
@@ -69,9 +74,11 @@ contract AssetManager is AccessControl {
     Assets[] public assets;
 
     mapping(address => bool) public isRegistered;
+    
+    mapping(address => bytes32) public getId;
     mapping(bytes32 => bool) public idExists;
     mapping(address => uint256) public HoldingAssets;
-    mapping(address => transactionType[]) internal transactionHistory;
+
 
     uint256 internal TotalUsers = 0;
     uint256 internal TotalAssets = 0;
@@ -102,17 +109,26 @@ contract AssetManager is AccessControl {
     }
 
     function getUserTransactionHistory(
-        address _userAddress
+        bytes32 _userId
     ) public view returns (transactionType[] memory) {
-        return transactionHistory[_userAddress];
+        return userTransactions[_userId];
     }
 
+
+/* problem here is that we need to call this function when the user makes a request of 
+adding his asset, then a minter accepts and then calls the function 
+with his account but how ? 
+
+maybe use a modifier that says minter Only */
+
     function createNewAsset(
+        address _minterAddress,
         address _holderAddress,
+        bytes32 _userId,
         string memory _description,
         uint256 _price,
         assetType _classType
-    ) public onlyRole(MINTER_ROLE) returns (bool) {
+    ) public requireMinter(_minterAddress) returns (bool) {
 
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
@@ -130,16 +146,17 @@ contract AssetManager is AccessControl {
         TotalAssets++;
         idExists[id] = true;
 
-        transactionHistory[_holderAddress].push(transactionType.Mint);
+        userTransactions[_userId].push(transactionType.Mint);
         return (true);
     }
 
     function createListing(        
         bytes32 _assetId,
+        bytes32 _userId,
         string memory _newDescription,
         uint256 _listingPrice
-        ) 
-        public returns(bool){
+        ) public isAlreadyRegistered(msg.sender)
+        returns(bool){
         
         bool assetExists = false;
         uint assetIndex = 0;
@@ -161,7 +178,7 @@ contract AssetManager is AccessControl {
         // Optionally, mark the asset as listed in some way
 
         // Record the transaction
-        transactionHistory[msg.sender].push(transactionType.Sale);
+        userTransactions[_userId].push(transactionType.Sale);
 
         return true;
      
@@ -170,24 +187,24 @@ contract AssetManager is AccessControl {
     } 
 
     
-    function removeAsset() public {}
+    // function removeAsset() private {}
    
-    function modifyAssetDescription() public {}
+    // function modifyAssetDescription() private {}
    
-    function modifyAssetPrice() public {}
+    // function modifyAssetPrice() private {}
    
-    function modifyAssetAddressOwner() public {}
+    // function modifyAssetAddressOwner() private {}
     
 
-    function removeListing() public {}
+    function removeListing() private {}
 
     
 
-    function Buy() public returns(bool) {    
+    function Buy() private returns(bool) {    
     }
 
 
-    function Bid() public pure {}
+    function Bid() private pure {}
 
 
 }
