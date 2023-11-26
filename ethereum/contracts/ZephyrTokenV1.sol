@@ -32,6 +32,10 @@ contract Zephyr is ERC721, ERC721Pausable, AccessControl, ERC721Burnable {
         _safeMint(to, tokenId);
     }
 
+    function getAddress() public view returns(address){
+        return address(this);
+    }
+
     // The following functions are overrides required by Solidity.
 
     function _update(address to, uint256 tokenId, address auth)

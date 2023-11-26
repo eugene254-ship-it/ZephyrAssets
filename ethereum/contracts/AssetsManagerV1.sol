@@ -7,7 +7,7 @@ import "./ZephyrTokenV1.sol";
 contract AssetManager is AccessControl {
 
     Zephyr zephyrNft;
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    bytes32 internal MINTER_ROLE = zephyrNft.MINTER_ROLE();
 
     constructor(Zephyr _zephyrNftAddress) {
         zephyrNft = _zephyrNftAddress;
@@ -20,7 +20,7 @@ contract AssetManager is AccessControl {
     error CannotFindAsset(bytes32 assetId);
 
     modifier requireMinter(address _userAddress) {
-        if (!hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
+        if (!zephyrNft.hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
         _;
     }
 
@@ -156,7 +156,7 @@ maybe use a modifier that says minter Only */
         string memory _newDescription,
         uint256 _listingPrice
         ) public isAlreadyRegistered(msg.sender)
-        returns(bool){
+        returns(uint16){
         
         bool assetExists = false;
         uint assetIndex = 0;
@@ -180,7 +180,7 @@ maybe use a modifier that says minter Only */
         // Record the transaction
         userTransactions[_userId].push(transactionType.Sale);
 
-        return true;
+        return 0;
      
 
      
@@ -206,5 +206,6 @@ maybe use a modifier that says minter Only */
 
     function Bid() private pure {}
 
-
+    receive() external payable {} 
+    fallback() external payable {}
 }
