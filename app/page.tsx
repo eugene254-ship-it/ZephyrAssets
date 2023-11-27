@@ -1,12 +1,12 @@
-import "./layout.tsx";
+import "./layout";
 import "../styles/globals.css";
 import React from "react";
-import { Why1 } from "@/components/Text.tsx";
-import PurposePart from "@/components/PurposePart.tsx";
-import Showcase from "@/utils/Showcase.tsx";
-import FadeUp from "@/components/fadeEffect.tsx";
-import Steps from "@/components/Steps.tsx";
-import FAQ from "@/utils/FAQ.tsx";
+import { Why1 } from "@/components/Text";
+import PurposePart from "@/components/PurposePart";
+import Showcase from "@/utils/Showcase";
+import FadeUp from "@/components/fadeEffect";
+import Steps from "@/components/Steps";
+import FAQ from "@/utils/FAQ";
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 const Home = () => {

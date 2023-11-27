@@ -29,11 +29,11 @@
 }
 
 .blur-container {
-  @apply mb-2 mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[100px] rounded-sm;
+  @apply mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[100px] rounded-sm;
 }
 
 .black-container {
-  @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl;
+  @apply mx-auto bg-black text-center justify-center items-center p-12 rounded-xl;
 }
 
 .bw-title {

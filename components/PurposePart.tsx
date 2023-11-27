@@ -1,6 +1,6 @@
 'use client'
 import React from "react"
-import {PurposePart1, PurposePart2, PurposePart3} from './Text'
+import {PurposePart1} from './Text'
 
 
 const PurposePart = () => (
