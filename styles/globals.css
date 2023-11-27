@@ -2,102 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-  .main {
-    scroll-behavior: smooth;
-  }
+.main {
+  scroll-behavior: smooth;
+}
 
 .about-bg {
-  background-image: url('/backgrounds/about.jpg');
+  background-image: url("/backgrounds/about.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-  /* globals.css */
+/* globals.css */
 .topography-bg {
-  background-image: url('/topography.svg');
+  background-image: url("/topography.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-  .main-bg {
-      background-image: url('/backgrounds/Cotton.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      backdrop-filter: blur(1px);
-    }
-  
-  .blur-container {
-      @apply mb-2 mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[100px] rounded-sm
-    }
-    
-  .black-container {
-    @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl
-  }
+.main-bg {
+  background-image: url("/backgrounds/Cotton.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  backdrop-filter: blur(1px);
+}
 
-  .bw-title {
-    @apply p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl ring-2 ring-white text-white bg-black
-  }
+.blur-container {
+  @apply mb-2 mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[100px] rounded-sm;
+}
 
-  .white {
-    @apply text-white
-  }
+.black-container {
+  @apply mt-5 mx-auto bg-black text-center justify-center items-center container p-4 rounded-xl;
+}
 
-  .red-button {
-    background-image: url("/plus-button-red.png");
-  }
-  .red {
-    @apply text-red-700
-  }
+.bw-title {
+  @apply p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl ring-2 ring-white text-white bg-black;
+}
 
-  .nft-card {
-    border-radius: 10px;
-    padding: 15px;
-    transition: all 0.3s ease;
-  }
-  
-  .nft-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .badge-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+.white {
+  @apply text-white;
+}
 
-  .nfts-assets{
-      @apply w-[200px] mt-4 mb-2 m-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100
-    }
+.red-button {
+  background-image: url("/plus-button-red.png");
+}
+.red {
+  @apply text-red-700;
+}
 
-  .buy-button {
-  @apply ring-2 ring-black rounded-xl px-6 mt-2 mb-2 bg-blue-600 hover:bg-blue-500 hover:text-black active:bg-white font-semibold text-lg
-  }
-  
-  .hover:scale-125 {
-      will-change: transform;
-    }
-  
-    .purpose-win {
-      @apply font-extrabold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
-    }
-    .purpose-win-title {
-      @apply font-bold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default
-    }
-    
-    .main-div {
-      @apply rounded-xl inline-block p-4 shadow-lg mt-5 mb-4
-    }
+.nft-card {
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
 
-    .step-div{
-      @apply text-2xl text-center p-4 mt-4 mb-4
-    }
+.nft-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.badge-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.nfts-assets {
+  @apply w-[200px] mt-4 mb-2 m-2 ring-2 ring-black text-center font-semibold transform hover:scale-125  duration-100;
+}
 
+.buy-button {
+  @apply ring-2 ring-black rounded-xl px-6 mt-2 mb-2 bg-blue-600 hover:bg-blue-500 hover:text-black active:bg-white font-semibold text-lg;
+}
 
+.hover:scale-125 {
+  will-change: transform;
+}
 
+.purpose-win {
+  @apply font-extrabold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default;
+}
+.purpose-win-title {
+  @apply font-bold text-2xl p-3 mt-3 mb-2 ring-2 inline-block rounded-md hover:scale-125 transform duration-300 cursor-default;
+}
+
+.main-div {
+  @apply rounded-xl inline-block p-4 shadow-lg mt-5 mb-4;
+}
+
+.step-div {
+  @apply text-2xl text-center p-4 mt-4 mb-4;
+}
