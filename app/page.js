@@ -1,12 +1,12 @@
 import "./layout.js";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import React from "react";
-import { Why1, Question } from "@/components/Text.js";
+import { Why1 } from "@/components/Text.js";
 import PurposePart from "@/components/PurposePart.js";
-import Showcase from "@/components/Showcase.js";
+import Showcase from "@/utils/Showcase.js";
 import FadeUp from "@/components/fadeEffect.js";
 import Steps from "@/components/Steps.js";
-import FAQ from "@/components/FAQ.js";
+import FAQ from "@/utils/FAQ.js";
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         <PurposePart></PurposePart>
 
         <section className=" text-white">
-          <div className="red-container">
+          <div className="blur-container">
             <h2 className="bw-title ring-2 ring-white">
               Why should you Tokenize your assets ?
             </h2>
@@ -27,8 +27,7 @@ const Home = () => {
         <section className="container mx-auto">
           <Steps></Steps>
           <FAQ></FAQ>
-          </section>
-        
+        </section>
       </FadeUp>
     </main>
   );
