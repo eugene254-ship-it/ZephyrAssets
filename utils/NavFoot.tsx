@@ -1,13 +1,13 @@
 import React from "react";
-import Connect_Wallet from "@/components/Connect_Wallet.tsx";
+import Connect_Wallet from "@/components/Connect_Wallet";
 import Link from "next/link";
-
+import "@/styles/globals.css";
 // Navigation Bar
 const Navbar = () => {
   return (
     <section>
-      <div className="">
-        <nav className="flex ring-1 p-4 ring-black items-center justify-center bg-black text-white mx-auto">
+      <div>
+        <nav className="flex p-4 items-center justify-center bg-black text-white">
           <Link href="/">
             <img
               src="./logo.png"
@@ -27,7 +27,7 @@ const Navbar = () => {
                     Create
                   </span>
                   <img
-                    className="mt-[2px] w-[25px] h-[25px] group-hover:filter group-hover:invert"
+                    className="mt-[2px] w-[20px] h-[20px] group-hover:filter group-hover:invert"
                     src="./plus-button.png"
                     alt=""
                   />

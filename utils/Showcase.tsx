@@ -1,4 +1,4 @@
-import Buy_Button from "@/components/Buy_Button.tsx";
+import Buy_Button from "@/components/Buy_Button";
 import React from "react";
 
 const Showcase = () => {
@@ -20,7 +20,7 @@ const Showcase = () => {
             <h2 className="text-white font-bold mt-2">
               Estimated Value: 10 ETH
             </h2>
-            <Buy_Button className="mt-2"></Buy_Button>
+            <Buy_Button></Buy_Button>
           </li>
 
           <li className="nft-card hover:shadow-xl p-4 shadow-slate-950 shadow-lg transition duration-300 ease-in-out ring-2 ring-blue-600 bg-white">
@@ -36,7 +36,7 @@ const Showcase = () => {
             <h2 className="text-black font-bold mt-2">
               Estimated Value: 10 ETH
             </h2>
-            <Buy_Button className="mt-2"></Buy_Button>
+            <Buy_Button></Buy_Button>
           </li>
 
           <li className="nft-card hover:shadow-xl p-4 transition ring-2 ring-blue-600 duration-300 ease-in-out bg-[#784647] rounded-md shadow-slate-950 shadow-lg">
