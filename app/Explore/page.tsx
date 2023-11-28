@@ -2,8 +2,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="container mx-auto px-4">
-    <div className="mb-8">
+    <div className="mx-auto p-4 backdrop-blur-sm">
+    <div className="">
       <div className="flex items-center max-w-md mx-auto bg-white rounded-full">
         <input
           type="search"

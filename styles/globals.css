@@ -28,9 +28,19 @@
   backdrop-filter: blur(1px);
 }
 
-.blur-container {
-  @apply mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[100px] rounded-sm;
+.tips-bg {
+  background-image: url("/backgrounds/tipsimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
 }
+
+.blur-container {
+  @apply mx-auto ring-2 ring-red-500 backdrop-blur-sm text-white text-center justify-center items-center p-[180px] rounded-sm;
+}
+
+
 
 .black-container {
   @apply mx-auto bg-black text-center justify-center items-center p-12 rounded-xl;

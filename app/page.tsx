@@ -1,7 +1,7 @@
 import "./layout";
 import "../styles/globals.css";
 import React from "react";
-import { Why1 } from "@/components/Text";
+import { Why1 } from "@/utils/Text";
 import PurposePart from "@/components/PurposePart";
 import Showcase from "@/utils/Showcase";
 import FadeUp from "@/components/fadeEffect";
@@ -17,7 +17,7 @@ const Home = () => {
         <PurposePart></PurposePart>
 
         <section className=" text-white">
-          <div className="blur-container">
+          <div className="p-">
             <h2 className="bw-title ring-2 ring-white">
               Why should you Tokenize your assets ?
             </h2>

@@ -1,21 +1,27 @@
 'use client'
-import React from 'react'
+import React, { ReactNode } from 'react';
 
+// Define TypeScript interface for Typography props
+interface TypographyProps {
+  title: string;
+  className?: string;
+  children: ReactNode;
+}
 
-// Reusable component
-const Typography = ({ title, className, children }) => {
+// Reusable component with TypeScript props
+const Typography: React.FC<TypographyProps> = ({ title, className = '', children }) => {
   return (
     <div className={`p-4 ${className}`}>
-      <h2 className="text-2xl font-semibold ">{title}</h2>
+      <h2 className="text-2xl font-semibold">{title}</h2>
       <p className="text-black mt-2">{children}</p>
     </div>
   );
 };
 
-// Usage
-const PurposePart1 = () => (
+// Usage components remain the same, no props are passed to them so no TypeScript changes are needed
+const PurposePart1: React.FC = () => (
   <div>
-  <Typography title="Bridging the Gap Between Physical and Digital">
+    <Typography title="Bridging the Gap Between Physical and Digital">
     Real-world token assets represent a revolutionary shift in how we interact with tangible goods and commodities. By utilizing blockchain technology,
      these tokenized assets forge an unbreakable connection   between a physical item and its digital representation.
   </Typography>
@@ -33,10 +39,7 @@ const PurposePart1 = () => (
   </div>
 );
 
-
-
-
-const Why1 = () => (
+const Why1: React.FC = () => (
   <div>
     <ul>
       <li>
@@ -65,14 +68,10 @@ const Why1 = () => (
       </li>
     </ul>
   </div>
-)
+);
 
-
-
-
-const Question = () => {
-
-  return (
+const Question: React.FC = () => (
+  <div>
     <div className="black-container text-white">
           <h1 className="text-3xl font-semibold mb-4">Most Common Questions</h1>
           <div className="rounded-md p-4">
@@ -126,9 +125,11 @@ const Question = () => {
             </p>
           </div>
         </div>
-  )
-}
+  </div>
+);
+
+export { PurposePart1, Why1, Question };
 
 
 
-export {PurposePart1, Why1, Question}; 
+

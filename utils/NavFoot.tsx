@@ -65,7 +65,7 @@ const Navbar = () => {
 // Footer Section Part
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 mt-5 ring-1 ring-black">
+    <footer className="bg-black text-white p-14 mt-5 ring-1 ring-black">
       <div className="container mx-auto flex justify-between items-center">
         {/* Copyright */}
         <div className="text-sm">
@@ -73,23 +73,24 @@ const Footer = () => {
         </div>
 
         {/* Navigation */}
-        <div className="flex space-x-4 text-white">
-          <Link href="/" className="text-sm  hover:text-blue-300">
+        <div className="flex space-x-6 text-xl text-white">
+          <Link href="/" className="hover:text-blue-300">
             Home
           </Link>
-          <Link href="/About" className="text-sm  hover:text-blue-300">
+          <Link href="/About" className="hover:text-blue-300">
             About
           </Link>
-          <Link href="/Services" className="text-sm  hover:text-blue-300">
-            Services
+          <Link href="/Explore" className= "hover:text-blue-300">
+            Explore
           </Link>
-          <Link href="/" className="text-sm  hover:text-blue-300">
-            FAQ
+          <Link href="/Tips" className="hover:text-blue-300">
+            Tips
           </Link>
-          <Link href="/Contact" className="text-sm  hover:text-blue-300">
+          <Link href="/Contact" className="hover:text-blue-300">
             Contact
           </Link>
         </div>
+
       </div>
     </footer>
   );
