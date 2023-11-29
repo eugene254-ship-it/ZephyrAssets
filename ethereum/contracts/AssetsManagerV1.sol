@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ZephyrTokenV1.sol";
@@ -7,10 +7,12 @@ import "./ZephyrTokenV1.sol";
 contract AssetManager is AccessControl {
 
     Zephyr zephyrNft;
-    bytes32 internal MINTER_ROLE = zephyrNft.MINTER_ROLE();
+    bytes32 immutable public MINTER;
 
     constructor(Zephyr _zephyrNftAddress) {
         zephyrNft = _zephyrNftAddress;
+        MINTER = zephyrNft.MINTER_ROLE();
+        _grantRole(MINTER, msg.sender);
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
@@ -20,13 +22,12 @@ contract AssetManager is AccessControl {
     error CannotFindAsset(bytes32 assetId);
 
     modifier requireMinter(address _userAddress) {
-        if (!zephyrNft.hasRole(MINTER_ROLE, _userAddress)) revert Unauthorized();
+        if (!zephyrNft.hasRole(MINTER, _userAddress)) revert Unauthorized();
         _;
     }
 
     modifier isNotRegistered(address _userAddress) {
-        if (isRegistered[_userAddress])
-            revert UserAlreadyRegistered(_userAddress);
+        if (isRegistered[_userAddress]) revert UserAlreadyRegistered(_userAddress);
         _;
     }
 
@@ -122,13 +123,14 @@ with his account but how ?
 maybe use a modifier that says minter Only */
 
     function createNewAsset(
-        address _minterAddress,
+        // address _minterAddress,
         address _holderAddress,
         bytes32 _userId,
         string memory _description,
         uint256 _price,
         assetType _classType
-    ) public requireMinter(_minterAddress) returns (bool) {
+    ) public returns (bool) {
+        //  requireMinter(_minterAddress) 
 
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
@@ -138,7 +140,7 @@ maybe use a modifier that says minter Only */
             classType: _classType,
             assetId: id
         });
-
+        
         zephyrNft.safeMint(_holderAddress);
 
         assets.push(newAsset);
@@ -148,6 +150,12 @@ maybe use a modifier that says minter Only */
 
         userTransactions[_userId].push(transactionType.Mint);
         return (true);
+    }
+
+
+    function testMint() public returns(int16){
+        zephyrNft.safeMint(msg.sender);
+        return 0;
     }
 
     function createListing(        
