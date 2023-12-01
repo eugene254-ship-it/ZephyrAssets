@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-const eth = require('ethers');
 
 
 const Buy_Button = () => {
