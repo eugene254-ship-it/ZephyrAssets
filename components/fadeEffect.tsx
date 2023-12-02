@@ -1,8 +1,13 @@
 'use client'
 // FadeUp.js
-import { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 
-const FadeUp = ({ children }) => {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+
+const FadeUp = ({ children }: RootLayoutProps) => {
   const ref = useRef(null);
 
   useEffect(() => {
