@@ -1,12 +1,12 @@
 import "./layout";
 import "../styles/globals.css";
 import React from "react";
-import { Why1 } from "@/utils/Text";
-import PurposePart from "@/components/PurposePart";
-import Showcase from "@/utils/Showcase";
-import FadeUp from "@/components/fadeEffect";
-import Steps from "@/components/Steps";
-import FAQ from "@/utils/FAQ";
+import { Why1 } from "@/app/utils/Text";
+import PurposePart from "@/app/components/PurposePart";
+import Showcase from "@/app/utils/Showcase";
+import FadeUp from "@/app/components/fadeEffect";
+import Steps from "@/app/components/Steps";
+import FAQ from "@/app/utils/FAQ";
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 const Home = () => {

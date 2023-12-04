@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import "@/styles/globals.css";
-import FadeUp from "@/components/fadeEffect";
+import FadeUp from "@/app/components/fadeEffect";
 
 const page = () => {
   return (

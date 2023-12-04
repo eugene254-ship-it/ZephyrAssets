@@ -24,7 +24,7 @@ const Connect_Wallet = () => {
         </>
       ) : (
         <button
-          className="bg-blue-500 p-2 text-white hover:bg-cyan-400 active:bg-cyan-700 mx-2 rounded-xl"
+          className="bg-blue-500 p-2 text-white hover:bg-cyan-600 active:bg-cyan-700 duration-300 hover:scale-105 mx-2 rounded-xl"
           onClick={connectWallet}
         >
           Connect Wallet

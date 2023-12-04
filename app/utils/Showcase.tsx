@@ -1,4 +1,4 @@
-import Buy_Button from "@/components/Buy_Button";
+import Buy_Button from "@/app/components/Buy_Button";
 import React from "react";
 
 const Showcase = () => {
