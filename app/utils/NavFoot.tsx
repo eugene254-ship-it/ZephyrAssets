@@ -18,7 +18,7 @@ const Navbar = () => {
           {/* <h1 className="flex text-3xl text-white font-extrabold ">ZephyrX</h1> */}
           <ul
             className="flex justify-center space-x-4 gap-4 items-center
-        text-center text-lg font-semibold m-2 cursor-default"
+        text-center text-lg font-semibold m-2 cursor-default sm:flex"
           >
             <li className="scale-105 duration-300">
               <Link href="/">
@@ -50,7 +50,7 @@ const Navbar = () => {
             <li className="hover:text-blue-300 active:text-white hover:scale-110 duration-500">
               <Link href="/Profile">Profile</Link>
             </li>
-            <li className="flex translate-x-4">
+            <li className="flex translate-x-4 sm:hidden">
               <Connect_Wallet></Connect_Wallet>
             </li>
           </ul>
@@ -63,8 +63,8 @@ const Navbar = () => {
 // Footer Section Part
 const Footer = () => {
   return (
-    <footer className="flex bg-black text-white p-6 mt-5 ring-1 ring-black">
-      <div className="container mx-auto flex justify-evenly items-center">
+    <footer className="flex bg-black text-white p-8 mt-5 ring-1 ring-black sm:p-6">
+      <div className="container mx-auto flex justify-evenly items-center sm:space-y-0 sm:flex-row">
         {/* Copyright */}
         <div className="text-sm scale-105 hover:scale-125 duration-300">
           <p>&copy; 2023 ZephyrX Inc. All rights reserved.</p>
