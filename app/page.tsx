@@ -7,26 +7,26 @@ import Showcase from "@/app/utils/Showcase";
 import FadeUp from "@/app/components/fadeEffect";
 import Steps from "@/app/components/Steps";
 import FAQ from "@/app/utils/FAQ";
+import PromotionalSection from "./components/Popup";
 // import { DAppProvider, useEthers, Mainnet, Config, getDefaultProvider } from '@usedapp/core';
 
 const Home = () => {
   return (
     <main>
       <FadeUp>
-        <Showcase></Showcase>
-        <PurposePart></PurposePart>
-
-        <section className=" text-white">
-          <div className="p-">
-            <h2 className="bw-title ring-2 ring-white">
-              Why should you Tokenize your assets ?
+        <PromotionalSection/>
+        <Showcase/>
+        <PurposePart/>
+        <section className="blur-container text-white">
+          <div className="bg-white container p-6 ring-2 ring-black rounded-lg">
+            <h2 className="p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl ring-2 ring-white text-white bg-black">         Why should you Tokenize your assets ?
             </h2>
-            <Why1></Why1>
+            <Why1/>
           </div>
         </section>
         <section className="container mx-auto">
-          <Steps></Steps>
-          <FAQ></FAQ>
+          <Steps/>
+          <FAQ/>
         </section>
       </FadeUp>
     </main>

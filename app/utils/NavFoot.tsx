@@ -51,7 +51,7 @@ const Navbar = () => {
               <Link href="/Profile">Profile</Link>
             </li>
             <li className="flex translate-x-4 sm:hidden">
-              <Connect_Wallet></Connect_Wallet>
+              <Connect_Wallet/>
             </li>
           </ul>
         </nav>

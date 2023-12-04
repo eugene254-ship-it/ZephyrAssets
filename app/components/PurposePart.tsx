@@ -4,14 +4,14 @@ import { PurposePart1 } from "../utils/Text";
 
 const PurposePart = () => (
   <section
-    className="grid grid-cols-2 gap-5  
-      bg-white ring-2 ring-black black-container"
+    className="gap-5  
+    purpose-bg backdrop:blur-sm text-center justify-center items-center p-[120px]"
   >
-    <div className="main-div bg-white ring-2 ring-fuchsia-400">
-      <h1 className="font-extrabold text-2xl ring-1 ring-fuchsia-400 red-container hover:scale-105 duration-300">
+    <div className="main-div p-[90px] translate-x-[120px] container bg-white">
+      <h1 className="font-extrabold text-2xl text-fuchsia-500 red-container hover:scale-105 duration-300">
         What's the Purpose of Real-World Token Assets?
       </h1>
-      <PurposePart1></PurposePart1>
+      <PurposePart1/>
       <img
         src="/home_imgs/docs.jpg"
         alt="documents_image"
@@ -29,18 +29,17 @@ const PurposePart = () => (
 
         <h2>Ecological Impact</h2>
         <p>Digitizing assets on the blockchain can significantly reduce the amount of paper and physical resources required in traditional asset management. This not only makes processes more efficient but also contributes to environmental sustainability.</p> */}
-    <div className="rounded-xl inline-block p-4">
+    {/* <div className="rounded-xl inline-block p-4">
       <img
         src="/home_imgs/house.jpg"
         alt="house_image"
         className="rounded-xl ring-1 ring-white"
-      />
+      /> */}
       <img
-        src="/home_imgs/car-irl.jpg"
+        src="/home_imgs/"
         alt="car_image"
-        className="flex justify-center translate-x-11 rounded-xl ring-1 ring-white h-[700px]"
+        className="flex justify-center translate-x-11 rounded-xl"
       />
-    </div>
   </section>
 );
 
