@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import { Navbar, Footer } from "@/app/utils/NavFoot";
 import "../styles/globals.css";
 import { ReactNode } from "react";
-import FadeUp from "./components/fadeEffect";
 
 const inter = Inter({ subsets: ["latin"] });
 

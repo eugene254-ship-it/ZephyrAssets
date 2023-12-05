@@ -11,9 +11,10 @@ interface TypographyProps {
 // Reusable component with TypeScript props
 const Typography: React.FC<TypographyProps> = ({ title, className = '', children }) => {
   return (
-    <div className={`p-4 ${className}`}>
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="text-black mt-2">{children}</p>
+    <div className={`p-4 ${className} text-black rounded-lg justify-end shadow-md hover:shadow-xl ring-1 ring-red-500 ring-opacity-30 transition-all duration-300 ease-in-out`}>
+      <h2 className="text-2xl font-bold ">{title}</h2>
+      <p className="mt-2">{children}</p>
+     
     </div>
   );
 };
@@ -24,6 +25,7 @@ const PurposePart1: React.FC = () => (
     <Typography title="Bridging the Gap Between Physical and Digital">
     Real-world token assets represent a revolutionary shift in how we interact with tangible goods and commodities. By utilizing blockchain technology,
      these tokenized assets forge an unbreakable connection   between a physical item and its digital representation.
+     
   </Typography>
   <Typography title="Immutability and Transparency">
   One of the key benefits is the immutable nature of blockchain records.

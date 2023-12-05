@@ -8,7 +8,7 @@ const PurposePart = () => (
     purpose-bg backdrop:blur-sm text-center justify-center items-center p-[120px]"
   >
     <div className="main-div p-[90px] translate-x-[120px] container bg-white">
-      <h1 className="font-extrabold text-2xl text-fuchsia-500 red-container hover:scale-105 duration-300">
+      <h1 className="font-extrabold text-2xl mb-4 -translate-y-4 ring-2 bg-gradient-to-r rounded-xl inline-block p-4 from-cyan-300 to-emerald-400 text-black red-container hover:scale-105 duration-300">
         What's the Purpose of Real-World Token Assets?
       </h1>
       <PurposePart1/>

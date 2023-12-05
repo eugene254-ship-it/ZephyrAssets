@@ -17,15 +17,19 @@ const Home = () => {
         <PromotionalSection/>
         <Showcase/>
         <PurposePart/>
-        <section className="blur-container text-white">
-          <div className="bg-white container p-6 ring-2 ring-black rounded-lg">
-            <h2 className="p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl ring-2 ring-white text-white bg-black">         Why should you Tokenize your assets ?
+        <section className="bg-white grid grid-cols-2 backdrop-blur-sm text-center justify-center items-center  text-white">
+          <div className="p-6 rounded-lg">
+            <h2 className="p-4 mt-4 mb-6 shadow-xl font-bold text-2xl inline-block rounded-xl ring-2 ring-white text-white bg-black">
+              Why should you Tokenize your assets ?
             </h2>
             <Why1/>
           </div>
+          <div>
+            <img src="./home_imgs/woman.jpg" alt="" className=" w-[px] "/>
+          </div>
         </section>
-        <section className="container mx-auto">
-          <Steps/>
+        <section className=" mx-auto">
+          
           <FAQ/>
         </section>
       </FadeUp>
