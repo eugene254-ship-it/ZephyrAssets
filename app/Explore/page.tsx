@@ -1,7 +1,9 @@
 import React from 'react'
+import FadeUp from '../components/fadeEffect'
 
 const page = () => {
   return (
+    <FadeUp>
     <div className="mx-auto p-4 backdrop-blur-sm">
     <div className="">
       <div className="flex items-center max-w-md mx-auto bg-white rounded-full">
@@ -38,6 +40,7 @@ const page = () => {
       {/* ... other NFT items ... */}
     </div>
   </div>
+  </FadeUp>
 
   )
 }

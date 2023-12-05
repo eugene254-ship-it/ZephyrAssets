@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <section>
       <div>
-        <nav className="flex p-4 items-center transition-all sm:p-6 duration-300 top-[-50px] justify-center bg-black text-white">
+        <nav className="flex ring-1 ring-white p-4 items-center transition-all sm:p-6 duration-300 top-[-50px] justify-center bg-black text-white">
           <Link href="/">
             <img
               src="./logo.png"
