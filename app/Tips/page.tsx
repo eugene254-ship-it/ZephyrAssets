@@ -26,13 +26,15 @@ const page = () => {
                 href="#"
                 className="inline-block rounded-full bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
               >
-                Start Here
+                Start Below
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section></section>
+      <section>
+        
+      </section>
     </FadeUp>
   );
 };
