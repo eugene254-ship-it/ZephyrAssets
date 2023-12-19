@@ -5,14 +5,12 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ZephyrTokenV1.sol";
 
 contract AssetManager is AccessControl {
-
     Zephyr zephyrNft;
-    bytes32 immutable public MINTER;
+    bytes32 public immutable MINTER;
 
     constructor(Zephyr _zephyrNftAddress) {
         zephyrNft = _zephyrNftAddress;
-        MINTER = zephyrNft.MINTER_ROLE();
-        _grantRole(MINTER, msg.sender);
+        _grantRole(zephyrNft.MINTER_ROLE(), msg.sender);
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
@@ -67,60 +65,38 @@ contract AssetManager is AccessControl {
         bytes32 userId;
     }
 
-    mapping (bytes32 => Assets[]) public userAssets;
-    mapping (bytes32 => transactionType[]) public userTransactions;
-
+    mapping(bytes32 => Assets[]) public userAssets;
+    mapping(bytes32 => transactionType[]) public userTransactions;
 
     User[] public users;
     Assets[] public assets;
 
     mapping(address => bool) public isRegistered;
-    
+
     mapping(address => bytes32) public getId;
     mapping(bytes32 => bool) public idExists;
     mapping(address => uint256) public HoldingAssets;
 
-
     uint256 internal TotalUsers = 0;
     uint256 internal TotalAssets = 0;
 
-
-    function registerUser(
-        string memory _username,
-        address _address
-    ) public isNotRegistered(_address) returns (bool, uint256) {
-        
+    function registerUser(string memory _username, address _address) public isNotRegistered(_address) {
         bytes32 id = keccak256(abi.encodePacked(block.timestamp, _username, _address));
 
-        User memory newUser = User({
-            username: _username,
-            userAddress: _address,
-            userId: id
-        });
+        User memory newUser = User({username: _username, userAddress: _address, userId: id});
 
         users.push(newUser);
         isRegistered[_address] = true;
         TotalUsers++;
-
-        return (isRegistered[_address], TotalUsers);
     }
 
-    function getNumberOfHolders() public view returns(uint256) {
-        return TotalUsers;
-    }
+  
 
-    function getUserTransactionHistory(
-        bytes32 _userId
-    ) public view returns (transactionType[] memory) {
-        return userTransactions[_userId];
-    }
+    /* problem here is that we need to call this function when the user makes a request of 
+    adding his asset, then a minter accepts and then calls the function 
+    with his account but how ? 
 
-
-/* problem here is that we need to call this function when the user makes a request of 
-adding his asset, then a minter accepts and then calls the function 
-with his account but how ? 
-
-maybe use a modifier that says minter Only */
+    maybe use a modifier that says minter Only */
 
     function createNewAsset(
         // address _minterAddress,
@@ -130,8 +106,8 @@ maybe use a modifier that says minter Only */
         uint256 _price,
         assetType _classType
     ) public returns (bool) {
-        //  requireMinter(_minterAddress) 
-
+        //  requireMinter(_minterAddress)
+        require(hasRole(MINTER, msg.sender), "Cannot Interact with the contract");
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
             holderAddress: _holderAddress,
@@ -140,7 +116,7 @@ maybe use a modifier that says minter Only */
             classType: _classType,
             assetId: id
         });
-        
+
         zephyrNft.safeMint(_holderAddress);
 
         assets.push(newAsset);
@@ -152,31 +128,27 @@ maybe use a modifier that says minter Only */
         return (true);
     }
 
-
-    function testMint() public returns(int16){
+    function testMint() public returns (int16) {
         zephyrNft.safeMint(msg.sender);
         return 0;
     }
 
-    function createListing(        
-        bytes32 _assetId,
-        bytes32 _userId,
-        string memory _newDescription,
-        uint256 _listingPrice
-        ) public isAlreadyRegistered(msg.sender)
-        returns(uint16){
-        
+    function createListing(bytes32 _assetId, bytes32 _userId, string memory _newDescription, uint256 _listingPrice)
+        public
+        isAlreadyRegistered(msg.sender)
+        returns (uint16)
+    {
         bool assetExists = false;
-        uint assetIndex = 0;
-        for (uint i = 0; i < assets.length; i++){
-            if( assets[i].assetId == _assetId){
+        uint256 assetIndex = 0;
+        for (uint256 i = 0; i < assets.length; i++) {
+            if (assets[i].assetId == _assetId) {
                 assetExists = true;
                 assetIndex = i;
                 break;
             }
         }
 
-        if(assetExists) revert CannotFindAsset(_assetId);
+        if (assetExists) revert CannotFindAsset(_assetId);
 
         require(assets[assetIndex].holderAddress == msg.sender, "Caller is not the asset owner.");
 
@@ -189,31 +161,34 @@ maybe use a modifier that says minter Only */
         userTransactions[_userId].push(transactionType.Sale);
 
         return 0;
-     
+    }
 
-     
-    } 
-
-    
     // function removeAsset() private {}
-   
+
     // function modifyAssetDescription() private {}
-   
+
     // function modifyAssetPrice() private {}
-   
+
     // function modifyAssetAddressOwner() private {}
-    
 
     function removeListing() private {}
 
-    
-
-    function Buy() private returns(bool) {    
-    }
-
+    function Buy() private returns (bool) {}
 
     function Bid() private pure {}
 
-    receive() external payable {} 
+    receive() external payable {}
     fallback() external payable {}
+
+      function getNumberOfHolders() public view returns (uint256) {
+        return TotalUsers;
+    }
+
+    function getUserTransactionHistory(bytes32 _userId) public view returns (transactionType[] memory) {
+        return userTransactions[_userId];
+    }
+
+    function getUserId() public view returns(bytes32) {
+        return getId[msg.sender];
+    }
 }
