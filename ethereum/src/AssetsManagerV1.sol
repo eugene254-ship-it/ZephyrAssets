@@ -4,16 +4,16 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ZephyrTokenV1.sol";
 
-contract AssetManager is AccessControl {
+contract AssetManager {
     Zephyr zephyrNft;
-    bytes32 public immutable MINTER;
+    bytes32 public immutable MINTER; 
+    constructor(address _zephyrNftAddress) {
+        zephyrNft = Zephyr(_zephyrNftAddress);
+        MINTER = zephyrNft.MINTER_ROLE();
 
-    constructor(Zephyr _zephyrNftAddress) {
-        zephyrNft = _zephyrNftAddress;
-        _grantRole(zephyrNft.MINTER_ROLE(), msg.sender);
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
+    
     error Unauthorized(); // No additional information
     error UserAlreadyRegistered(address user);
     error UserNotRegistered(address user);
@@ -80,7 +80,11 @@ contract AssetManager is AccessControl {
     uint256 internal TotalUsers = 0;
     uint256 internal TotalAssets = 0;
 
-    function registerUser(string memory _username, address _address) public isNotRegistered(_address) {
+    function registerUser(
+        string memory _username,
+        address _address) 
+        public 
+        isNotRegistered(_address) {
         bytes32 id = keccak256(abi.encodePacked(block.timestamp, _username, _address));
 
         User memory newUser = User({username: _username, userAddress: _address, userId: id});
@@ -107,7 +111,7 @@ contract AssetManager is AccessControl {
         assetType _classType
     ) public returns (bool) {
         //  requireMinter(_minterAddress)
-        require(hasRole(MINTER, msg.sender), "Cannot Interact with the contract");
+        require(zephyrNft.hasRole(MINTER, msg.sender), "Cannot Interact with the contract");
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
             holderAddress: _holderAddress,

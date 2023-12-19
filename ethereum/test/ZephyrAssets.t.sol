@@ -24,7 +24,7 @@ contract ZephyrTest is Test {
 
     function setUp() public {
         zephyrToken = new Zephyr(admin.addr, admin.addr, admin.addr);
-        assets = new AssetManager(zephyrToken);
+        assets = new AssetManager(address(zephyrToken));
         vm.prank(admin.addr);
         assets.registerUser(admin.name, admin.addr);
         assertEq(assets.isRegistered(admin.addr), true);
@@ -67,9 +67,12 @@ contract ZephyrTest is Test {
     }
 
     function testCreateNewAsset() public {
+        vm.prank(admin.addr);
         bytes32 userId = assets.getUserId();
         vm.prank(admin.addr);
         assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
         assertEq(assets.HoldingAssets(admin.addr), 1);
     }
+
+   
 }
