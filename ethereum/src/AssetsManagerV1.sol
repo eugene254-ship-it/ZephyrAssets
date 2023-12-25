@@ -4,12 +4,13 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./ZephyrTokenV1.sol";
 
-contract AssetManager {
+contract AssetManager is AccessControl {
     Zephyr zephyrNft;
     bytes32 public immutable MINTER; 
-    constructor(address _zephyrNftAddress) {
+    constructor(address _zephyrNftAddress, address _adminAddress) {
         zephyrNft = Zephyr(_zephyrNftAddress);
         MINTER = zephyrNft.MINTER_ROLE();
+        _grantRole(MINTER, _adminAddress);
 
     }
 

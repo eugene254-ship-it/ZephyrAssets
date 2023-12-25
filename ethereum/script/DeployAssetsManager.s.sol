@@ -5,7 +5,7 @@ import {Script, console2} from "forge-std/Script.sol";
 import {AssetManager} from "../src/AssetsManagerV1.sol";
 import {Zephyr} from "../src/ZephyrTokenV1.sol";
 
-contract CounterScript is Script {
+contract DeployAssetsManager is Script {
     AssetManager assets;
     Zephyr zephyrToken;
 
