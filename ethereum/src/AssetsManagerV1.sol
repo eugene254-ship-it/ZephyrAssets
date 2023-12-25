@@ -6,7 +6,8 @@ import "./ZephyrTokenV1.sol";
 
 contract AssetManager is AccessControl {
     Zephyr zephyrNft;
-    bytes32 public immutable MINTER; 
+    bytes32  public MINTER; 
+   
     constructor(address _zephyrNftAddress, address _adminAddress) {
         zephyrNft = Zephyr(_zephyrNftAddress);
         MINTER = zephyrNft.MINTER_ROLE();

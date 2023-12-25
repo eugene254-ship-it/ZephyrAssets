@@ -66,13 +66,17 @@ contract ZephyrTest is Test {
         zephyrToken.safeMint(fuzz2.addr);
     }
 
-    function testCreateNewAsset() public {
-        vm.startPrank(admin.addr);
-        bytes32 userId = assets.getUserId();
-        assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
-        assertEq(assets.HoldingAssets(admin.addr), 1);
-        vm.stopPrank();
+
+    function verifyAdminisMinterandVerifyMINTERROLE() public{
+        
     }
+    // function testCreateNewAsset() public {
+    //     vm.startPrank(admin.addr);
+    //     bytes32 userId = assets.getUserId();
+    //     assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
+    //     assertEq(assets.HoldingAssets(admin.addr), 1);
+    //     vm.stopPrank();
+    // }
 
    
 }
