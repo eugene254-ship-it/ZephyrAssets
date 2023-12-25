@@ -133,8 +133,8 @@ contract AssetManager is AccessControl {
         uint256 _price,
         assetType _classType
     ) public returns (bool) {
-        //  requireMinter(_minterAddress)
-        require(zephyrNft.hasRole(MINTER, msg.sender), "Cannot Interact with the contract");
+        
+        require(zephyrNft.hasRole(zephyrNft.MINTER_ROLE(), msg.sender), "Cannot Interact with the contract");
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
             holderAddress: _holderAddress,

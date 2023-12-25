@@ -79,4 +79,53 @@ contract ZephyrTest is Test {
         vm.expectRevert();
         zephyrToken.safeMint(fuzz2.addr);
     }
+
+
+    function testverifyAdminisMinterandVerifyMinterRoleInternally() public {
+        vm.startPrank(admin.addr);
+        // internal calls
+        bool ZephTokenResult = zephyrToken.hasRole(zephyrToken.MINTER_ROLE(), admin.addr);
+        bool AssetsResult = assets.hasRole(assets.MINTER(), admin.addr);
+        vm.stopPrank();
+        assertEq(ZephTokenResult, true);
+        assertEq(AssetsResult, true);
+    }
+
+    function testverifyAdminisMinterandVerifyMinterRoleExternally() public {
+        // external calls
+        vm.startPrank(admin.addr);
+        bool ZephTokenResult = zephyrToken.hasRole(assets.MINTER(), admin.addr);
+        bool AssetsResult = assets.hasRole(zephyrToken.MINTER_ROLE(), admin.addr);
+        vm.stopPrank();
+        assertEq(ZephTokenResult, true);
+        assertEq(AssetsResult, true);
+    }
+    
+    /**
+     * @dev Modifier that checks that an account has a specific role. Reverts
+     * with an {AccessControlUnauthorizedAccount} error including the required role.
+     
+    modifier onlyRole(bytes32 role) {
+        _checkRole(role);
+        _;
+    }   
+
+     * @dev Reverts with an {AccessControlUnauthorizedAccount} error if `_msgSender()`
+     * is missing `role`. Overriding this function changes the behavior of the {onlyRole} modifier.
+     
+     * function _checkRole(bytes32 role) internal view virtual {
+     * _checkRole(role, _msgSender());
+     * }
+     */
+    
+
+    function testCreateNewAsset() public {
+        vm.startPrank(admin.addr);
+        bytes32 userId = assets.getUserId();
+        assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
+        assertEq(assets.HoldingAssets(admin.addr), 1);
+        vm.stopPrank();
+    }
+
+   
 }
