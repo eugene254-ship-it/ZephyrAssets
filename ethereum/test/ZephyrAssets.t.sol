@@ -6,22 +6,26 @@ import {AssetManager} from "../src/AssetsManagerV1.sol";
 import {Zephyr} from "../src/ZephyrTokenV1.sol";
 import "forge-std/console.sol";
 
+/// @title Zephyr Test Contract
+/// @dev Testing contract for Asset Manager and Zephyr Token functionalities
 contract ZephyrTest is Test {
     AssetManager assets;
     Zephyr zephyrToken;
 
-    struct FUZZ_NAME {
+    struct fuzz {
         string name;
         address addr;
     }
 
-    uint256 constant JEWELRY_PRICE = 41; 
-    FUZZ_NAME admin = FUZZ_NAME("John Marston", makeAddr("johnmarston"));
-    FUZZ_NAME fuzz1 = FUZZ_NAME("SAMURAI OKISHITA", makeAddr("okishitaSamuraika"));
-    FUZZ_NAME fuzz2 = FUZZ_NAME("Jean Frank Chabal", makeAddr("JFC"));
+    uint256 constant JEWELRY_PRICE = 41;
+    fuzz admin = fuzz("John Marston", makeAddr("johnmarston"));
+    fuzz fuzz1 = fuzz("SAMURAI OKISHITA", makeAddr("okishitaSamuraika"));
+    fuzz fuzz2 = fuzz("Jean Frank Chabal", makeAddr("JFC"));
 
     string BASIC_DESCRIPTION = "A red white incrusted diamond watch";
 
+    /// @notice Sets up the testing environment before each test
+    /// @dev Deploys Zephyr and AssetManager contracts and registers an admin user
     function setUp() public {
         zephyrToken = new Zephyr(admin.addr, admin.addr, admin.addr);
         assets = new AssetManager(address(zephyrToken), admin.addr);
@@ -30,12 +34,16 @@ contract ZephyrTest is Test {
         assertEq(assets.isRegistered(admin.addr), true);
     }
 
+    /// @notice Tests the registration of a new user in the Asset Manager
+    /// @dev Ensures that a new user can successfully register
     function testAssetsManagerRegistersUser() public {
         vm.prank(fuzz1.addr);
         assets.registerUser(fuzz1.name, fuzz1.addr);
         assertEq(assets.isRegistered(fuzz1.addr), true);
     }
 
+    /// @notice Tests that registering an already registered user fails
+    /// @dev Ensures that the contract prevents duplicate registrations
     function testFailsifAlreadyRegistered() public {
         vm.prank(fuzz1.addr);
         assets.registerUser(fuzz1.name, fuzz1.addr);
@@ -43,6 +51,8 @@ contract ZephyrTest is Test {
         assertEq(assets.isRegistered(fuzz1.addr), true);
     }
 
+    /// @notice Tests minting of Zephyr tokens by an admin with MINTER_ROLE
+    /// @dev Ensures that an admin can mint Zephyr tokens
     function testZephyrTokensMintwithAdminRole() public {
         vm.prank(admin.addr);
         zephyrToken.safeMint(admin.addr);
@@ -50,6 +60,8 @@ contract ZephyrTest is Test {
         assertEq(zephyrToken.ownerOf(0), admin.addr);
     }
 
+    /// @notice Tests granting MINTER_ROLE and minting Zephyr tokens
+    /// @dev Ensures that a user with MINTER_ROLE can mint tokens
     function testZephyrTokensGrantAdminRoleAndMint() public {
         bytes32 minterRole = zephyrToken.MINTER_ROLE();
         vm.prank(admin.addr);
@@ -61,22 +73,10 @@ contract ZephyrTest is Test {
         assertEq(zephyrToken.ownerOf(0), fuzz2.addr);
     }
 
+    /// @notice Tests that minting fails for users without MINTER_ROLE
+    /// @dev Ensures that the contract enforces role-based access control for minting
     function testMintFailsifNotMINTER() public {
         vm.expectRevert();
         zephyrToken.safeMint(fuzz2.addr);
     }
-
-
-    function verifyAdminisMinterandVerifyMINTERROLE() public{
-        
-    }
-    // function testCreateNewAsset() public {
-    //     vm.startPrank(admin.addr);
-    //     bytes32 userId = assets.getUserId();
-    //     assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
-    //     assertEq(assets.HoldingAssets(admin.addr), 1);
-    //     vm.stopPrank();
-    // }
-
-   
 }
