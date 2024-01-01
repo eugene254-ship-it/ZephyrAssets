@@ -35,11 +35,6 @@ const PurposePart = () => (
         alt="house_image"
         className="rounded-xl ring-1 ring-white"
       /> */}
-      <img
-        src="/home_imgs/"
-        alt="car_image"
-        className="flex justify-center translate-x-11 rounded-xl"
-      />
   </section>
 );
 

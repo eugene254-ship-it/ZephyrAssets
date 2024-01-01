@@ -25,7 +25,7 @@ const Home = () => {
             <Why1/>
           </div>
           <div>
-            <img src="./home_imgs/woman.jpg" alt="" className=" w-[px] "/>
+            <img src="./home_imgs/woman.jpg" alt="" className=" w-[800px] items-end "/>
           </div>
         </section>
         <section className=" mx-auto">
