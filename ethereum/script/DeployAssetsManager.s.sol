@@ -15,7 +15,6 @@ contract DeployAssetsManager is Script {
     /// @dev The script uses Foundry's Script functionality to deploy contracts
     /// The Zephyr contract is deployed first, followed by the AssetManager contract
     function run() public {
-
         vm.startBroadcast();
         // Deploy Zephyr contract with the deploying address as admin, pauser, and minter
         zephyrToken = new Zephyr(msg.sender, msg.sender, msg.sender);

@@ -23,7 +23,7 @@ contract AssetManager is AccessControl {
 
     /// @notice Custom errors for specific revert conditions :
     /**
-     * @dev 
+     * @dev
      *     Unauthorized : Not enough Information or Access Revoked
      *     UserAlreadyRegistered : User's address has already been indexed
      *     UserNotRegistered : Function Requiring a user to be registered and throw if not
@@ -96,7 +96,7 @@ contract AssetManager is AccessControl {
      * @dev
      *     mapping
      *         userAssets : bytes userId to Possessed Assets
-     *         userTransactions : UserId to array with all users's transactions 
+     *         userTransactions : UserId to array with all users's transactions
      *         isRegistered : Address is registered
      *         getId : Address to get bytes32 id
      *         idExists : bytes32 Id already exists
@@ -133,7 +133,6 @@ contract AssetManager is AccessControl {
         uint256 _price,
         assetType _classType
     ) public returns (bool) {
-        
         require(zephyrNft.hasRole(zephyrNft.MINTER_ROLE(), msg.sender), "Cannot Interact with the contract");
         bytes32 id = keccak256(abi.encodePacked(_holderAddress, _classType, _price));
         Assets memory newAsset = Assets({
@@ -197,8 +196,7 @@ contract AssetManager is AccessControl {
     /// @param _userId The unique identifier of the buyer
     /// @dev Transfers ownership of the asset and updates the price to zero (unlisted)
     /// @return Boolean indicating whether the purchase was successful
-    function buyAsset(bytes32 _assetId, bytes32 _userId) 
-    private pure returns (bool) {
+    function buyAsset(bytes32 _assetId, bytes32 _userId) private pure returns (bool) {
         // Logic to handle asset purchase
         // Update asset ownership, transfer funds, etc.
         // Update transaction history
@@ -215,12 +213,11 @@ contract AssetManager is AccessControl {
         // Update asset state to reflect bid
         // Record the bid transaction
     }
-    
+
     /// @notice Removes a listing for an asset
     /// @param _assetId The unique identifier of the asset to be unlisted
     /// @dev Sets the asset price to zero and updates its state to unlisted
     function removeListing(bytes32 _assetId) private {}
-
 
     function removeAsset() private {}
 

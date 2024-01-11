@@ -80,7 +80,6 @@ contract ZephyrTest is Test {
         zephyrToken.safeMint(fuzz2.addr);
     }
 
-
     function testverifyAdminisMinterandVerifyMinterRoleInternally() public {
         vm.startPrank(admin.addr);
         // internal calls
@@ -100,24 +99,23 @@ contract ZephyrTest is Test {
         assertEq(ZephTokenResult, true);
         assertEq(AssetsResult, true);
     }
-    
+
     /**
      * @dev Modifier that checks that an account has a specific role. Reverts
      * with an {AccessControlUnauthorizedAccount} error including the required role.
-     
-    modifier onlyRole(bytes32 role) {
-        _checkRole(role);
-        _;
-    }   
-
+     *  
+     * modifier onlyRole(bytes32 role) {
+     *     _checkRole(role);
+     *     _;
+     * }   
+     * 
      * @dev Reverts with an {AccessControlUnauthorizedAccount} error if `_msgSender()`
      * is missing `role`. Overriding this function changes the behavior of the {onlyRole} modifier.
-     
+     *  
      * function _checkRole(bytes32 role) internal view virtual {
      * _checkRole(role, _msgSender());
      * }
      */
-    
 
     function testCreateNewAsset() public {
         vm.startPrank(admin.addr);
@@ -126,6 +124,4 @@ contract ZephyrTest is Test {
         assertEq(assets.HoldingAssets(admin.addr), 1);
         vm.stopPrank();
     }
-
-   
 }
