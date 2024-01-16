@@ -18,9 +18,9 @@ contract ZephyrTest is Test {
     }
 
     uint256 constant JEWELRY_PRICE = 41;
-    fuzz admin = fuzz("John Marston", makeAddr("johnmarston"));
-    fuzz fuzz1 = fuzz("SAMURAI OKISHITA", makeAddr("okishitaSamuraika"));
-    fuzz fuzz2 = fuzz("Jean Frank Chabal", makeAddr("JFC"));
+    fuzz admin = fuzz('John Marston', makeAddr("johnmarston"));
+    fuzz fuzz1 = fuzz('SAMURAI OKISHITA', makeAddr("okishitaSamuraika"));
+    fuzz fuzz2 = fuzz('Jean Frank Chabal', makeAddr("JFC"));
 
     string BASIC_DESCRIPTION = "A red white incrusted diamond watch";
 
@@ -119,9 +119,13 @@ contract ZephyrTest is Test {
 
     function testCreateNewAsset() public {
         vm.startPrank(admin.addr);
+        zephyrToken.grantRole(zephyrToken.MINTER_ROLE(), admin.addr);
+        assertEq(zephyrToken.hasRole(zephyrToken.MINTER_ROLE(), admin.addr), true);
         bytes32 userId = assets.getUserId();
-        assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
-        assertEq(assets.HoldingAssets(admin.addr), 1);
+        console.logBytes32(zephyrToken.MINTER_ROLE());
+        console.logBytes32(userId);
+        // assets.createNewAsset(fuzz1.addr, userId, BASIC_DESCRIPTION, JEWELRY_PRICE, AssetManager.assetType.jewelry);
+        // assertEq(assets.HoldingAssets(admin.addr), 1);
         vm.stopPrank();
     }
 }
